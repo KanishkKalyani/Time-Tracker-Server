@@ -11,14 +11,14 @@ const typeDefs = gql`
    }
 
    type Query {
-      tracker: [Tracker]
+      tracker: [Tracker!]
    }
 
    type Mutation {
 
       addTrack(
          name: String,
-      ): Tracker
+      ): Tracker!
 
       editTrack(
          id: ID!,
@@ -26,9 +26,9 @@ const typeDefs = gql`
          start: String,
          end: String,
          tags: [String]
-      ): Tracker
+      ): Tracker!
 
-      deleteTrack(id: ID!): DeleteResponse
+      deleteTrack(id: ID!): DeleteResponse!
    }
 
    type DeleteResponse {
